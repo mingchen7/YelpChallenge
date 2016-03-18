@@ -1,0 +1,6 @@
+*.py[cod]
+*config.py
+docker/
+dataset/
+*.env
+
