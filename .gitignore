@@ -3,4 +3,5 @@
 docker/
 dataset/
 *.env
+*.csv
 

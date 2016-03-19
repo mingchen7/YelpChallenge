@@ -1,0 +1,413 @@
+"x"
+""	2
+"110. Las Vegas"	1
+"Ahwatukee"	13
+"Ahwatukee Foothills Village"	1
+"Allegheny"	1
+"Allentown"	2
+"Anjou"	10
+"Anthem"	123
+"Apache Junction"	157
+"Arcadia"	2
+"Arlington"	2
+"Aspinwall"	13
+"Avondale"	386
+"Baie-D'urfe"	1
+"Balerno"	1
+"Banksville"	1
+"Beaconsfield"	4
+"Bellevue"	24
+"Bellvue"	2
+"Belmont"	71
+"Bethel Park"	3
+"Bietigheim"	4
+"Black Canyon City"	3
+"Blainville"	2
+"Blawnox"	1
+"Bloomfield"	1
+"Bocholt"	1
+"Boisbriand"	5
+"Bonnyrigg"	4
+"Bonnyrigg and Lasswade"	1
+"Boucherville"	2
+"Boulder City"	37
+"Braddock"	3
+"Brentwood"	6
+"Breslau"	1
+"Bridgeville"	12
+"Brookline"	1
+"Brossard"	60
+"Bruchsal"	1
+"Bruntsfield"	1
+"Buckeye"	131
+"Burbank"	1
+"Cambridge"	9
+"Carefree"	51
+"Carnegie"	57
+"Casa Grande"	181
+"Castle Shannon"	5
+"Cave Creek"	229
+"Centennial Hills"	1
+"Central"	1
+"Central City"	1
+"Central City Village"	3
+"Central Henderson"	1
+"Champaign"	462
+"chandler"	2
+"Chandler"	2425
+"Chandler-Gilbert"	1
+"Chandler Heights"	2
+"Charlemagne"	1
+"Charlotte"	5189
+"Charlotte "	2
+"Chateau"	1
+"City Center"	1
+"City of Edinburgh"	2
+"Clark"	4
+"C Las Vegas"	1
+"Clover"	3
+"Columbus"	1
+"Communauté-Urbaine-de-Montréal"	1
+"Concord"	161
+"Concord Mills"	2
+"Conestogo"	2
+"Coolidge"	18
+"Cornwell Development"	1
+"Cote Saint-Luc"	1
+"Cote-Saint-Luc"	2
+"Cottage Grove"	15
+"Crafton"	6
+"Cramond"	1
+"Dalgety Bay"	1
+"Dalkeith"	8
+"Dallas"	1
+"Dane"	2
+"Deforest"	3
+"DeForest"	8
+"De Forest"	17
+"Delmont"	1
+"Desert Ridge"	1
+"Deux-Montagnes"	1
+"Deux-Montagnes Regional County Municipality"	1
+"Dollard-des-Ormeaux"	37
+"Dollard-Des Ormeaux"	3
+"Dollard-Des-Ormeaux"	37
+"Dormont"	6
+"Dorval"	40
+"Downtown"	2
+"Dravosburg"	5
+"Durmersheim"	14
+"Eagan"	1
+"East Liberty"	1
+"East Mesa"	2
+"Edgewood"	2
+"Edinburgh"	3272
+"Edinburgh City of"	1
+"Eggenstein-Leopoldshafen"	13
+"El Mirage"	50
+"Enterprise"	8
+"Estrella Village"	1
+"Etna"	1
+"Ettlingen"	55
+"Fabreville"	1
+"Firth of Forth"	3
+"Fitchburg"	123
+"Florence"	40
+"Forchheim"	1
+"Fort Kinnaird"	1
+"Fort Mcdowell"	3
+"Fort McDowell"	7
+"Fort mill"	1
+"Fort Mill"	238
+"Fountain Hills"	177
+"Ft. Mill"	1
+"Gila Bend"	20
+"Gilbert"	1716
+"Gilbert, AZ"	1
+"Glasgow"	1
+"glendale"	2
+"Glendale"	1823
+"Glendale Az"	1
+"Glibert"	1
+"Gold Canyon"	34
+"Golden Square Mile"	1
+"Goldfield"	1
+"Goodyear"	459
+"Grand Canyon"	1
+"Greenfield Park"	6
+"Green Tree"	1
+"Green Valley"	1
+"Guadalupe"	15
+"Hagenbach"	5
+"Harrisburg"	30
+"Heidelberg"	5
+"henderson"	1
+"Henderson"	2839
+"Henderson and Las vegas"	1
+"Henderson NV"	1
+"Henderston"	1
+"Higley"	16
+"Homestead"	87
+"Huntersville"	33
+"Île des Soeurs"	1
+"Independence"	1
+"Indian Land"	7
+"Indian Trail"	50
+"Ingram"	1
+"Inverkeithing"	2
+"Jockgrim"	2
+"Juniper Green"	5
+"Kahnawake"	1
+"Karlsbad"	7
+"Karlsruhe"	898
+"Kennedy Township"	1
+"Kirkland"	15
+"Kitchener"	188
+"Lachine"	22
+"Lake Las Vegas"	1
+"Lake Wylie"	6
+"La Paz"	1
+"La Prairie"	11
+"Lasalle"	40
+"LaSalle"	3
+"Lasswade"	4
+"Las Vegas"	17423
+"Las Vegas "	6
+"LAS VEGAS"	2
+"Las Vegas, NV"	1
+"Laval"	196
+"Laveen"	79
+"Laveen Village"	3
+"Lawrenceville"	2
+"Leith"	3
+"Le Sud-Ouest"	1
+"Le Vieux-Port"	1
+"L'Île-Bizard"	2
+"L'Île-des-Soeurs"	1
+"Litchfield Park"	110
+"Litchfield Park "	1
+"Loanhead"	5
+"Locust"	1
+"London"	1
+"Longueuil"	28
+"Los Angeles"	1
+"Lower Lawrenceville"	1
+"Madison"	2104
+"Maricopa"	143
+"Maricopa AZ"	1
+"Mascouche"	1
+"Mathews"	1
+"Mattews"	1
+"Matthews"	346
+"McAdenville"	1
+"Mcfarland"	2
+"McFarland"	9
+"Mc Farland"	14
+"McKeesport"	1
+"Mckees Rocks"	4
+"Mc Kees Rocks"	10
+"McKees Rocks"	14
+"Mesa"	3190
+"Mesa "	1
+"Mesa AZ"	1
+"Metro Phoenix"	1
+"Meza"	1
+"Middleton"	208
+"Midlothian"	2
+"Millvale"	4
+"Milton Bridge"	1
+"Mint Hill"	44
+"Mirabel"	1
+"MMRP"	1
+"Monona"	79
+"Monroe"	1
+"Montéal"	1
+"Montreal"	88
+"Montréal"	3891
+"Montreal-Est"	1
+"Montreal-Nord"	2
+"Montréal-Nord"	2
+"Montreal-Ouest"	1
+"Montréal-Ouest"	1
+"Montreal-West"	2
+"Mont-Royal"	13
+"Morristown"	4
+"Mount Holly"	17
+"Mount Lebanon"	13
+"Mount Royal"	1
+"Mount Washington"	3
+"Mt Lebanon"	2
+"Mt. Oliver Boro"	1
+"Munhall"	18
+"Musselburgh"	14
+"Nboulder City"	1
+"N E Las Vegas"	1
+"Nellis Afb"	3
+"Nellis AFB"	15
+"NELLIS AFB"	1
+"Nellis Air Force Base"	1
+"Neuburg am Rhein"	2
+"Newbridge"	3
+"New Dundee"	1
+"Newington"	1
+"New River"	10
+"New Town"	4
+"N Las Vegas"	16
+"N. Las Vegas"	2
+"North Carolina"	1
+"North Las Vegas"	819
+"North Las Vegas "	1
+"North Queensferry"	2
+"North Scottsdale"	1
+"N W Las Vegas"	1
+"Oakland"	3
+"Old Montreal"	1
+"Old Scottsdale"	1
+"Old Town"	4
+"Oregon"	1
+"Outremont"	30
+"Paradise"	26
+"Paradise Valley"	92
+"Penicuik"	1
+"Peoria"	929
+"Peoria "	1
+"Pfinztal"	10
+"Pheonix"	2
+"phoenix"	2
+"Phoenix"	10629
+"Phoenix "	1
+"Phoenix-Ahwatukee"	1
+"Phoenix, AZ"	1
+"Phoenix Metro Area"	1
+"Phoenix Sky Harbor Center"	1
+"Pierrefonds"	15
+"Pineville"	184
+"Pineville "	1
+"Pittsburg"	1
+"Pittsburgh"	3337
+"Pittsburgh/S. Hills Galleria"	1
+"Pittsburgh/Waterfront"	1
+"Pittsburrgh"	1
+"Pointe-Aux-Trembles"	3
+"Pointe Claire"	1
+"Pointe-Claire"	48
+"Portobello"	2
+"Québec"	2
+"Queen Creek"	348
+"Queensferry"	3
+"Queen Valley"	1
+"rankin"	1
+"Rankin"	2
+"Ratho"	1
+"Regent Square"	1
+"Rheinstetten"	14
+"Rio Verde"	6
+"Robinson Township"	1
+"Rock Hill"	1
+"Rockport"	1
+"Roosevelt"	1
+"Rosemere"	3
+"Rosemère"	6
+"Roslin"	1
+"Roxboro"	2
+"Sainte-Ann-De-Bellevue"	1
+"Sainte-Anne-de-Bellevue"	3
+"Sainte-Anne-De-Bellevue"	7
+"Sainte-Genevieve"	1
+"Sainte-Therese"	1
+"Sainte-Thérèse"	2
+"Saint-Eustache"	5
+"Saint-Henri"	1
+"Saint-Hubert"	1
+"Saint-Lambert"	10
+"Saint-laurent"	4
+"Saint Laurent"	2
+"Saint-Laurent"	71
+"Saint Leonard"	1
+"Saint-Leonard"	22
+"San Diego"	1
+"San Tan Valley"	76
+"Savoy"	13
+"Scotesdale"	1
+"Scotland"	1
+"Scottdale"	4
+"Scottsdale"	5139
+"Sedona"	1
+"Shadyside"	3
+"Shady Side"	1
+"Sharpsburg"	4
+"South Gyle"	1
+"South Hills"	1
+"South Las Vegas"	2
+"South Mountain"	1
+"South Queensferry"	12
+"Southside Flats"	1
+"Spring Valley"	6
+"Squirrel Hill"	3
+"St. Agatha"	1
+"Stallings"	10
+"Stanfield"	1
+"Ste-Rose"	1
+"St Jacobs"	4
+"St. Jacobs"	4
+"St-Laurent"	1
+"St Leonard"	1
+"Stockbridge"	3
+"Stoughton"	3
+"Stowe Township"	1
+"Straiton"	1
+"Stutensee"	7
+"Stutensee-Blankenloch"	1
+"Summerlin"	2
+"Summerlin South"	2
+"Sun City"	106
+"Sun City Anthem"	1
+"Sun City West"	40
+"Sun Lakes"	12
+"Sunnyslope"	1
+"Sun Prairie"	114
+"Sunrise"	1
+"Surprise"	587
+"Surprise Crossing"	1
+"Swissvale"	6
+"Tega Cay"	13
+"Tempe"	2773
+"Tempe "	1
+"Terrebonne"	3
+"Tolleson"	77
+"Tonopah"	9
+"Tonto Basin"	4
+"Tortilla Flat"	3
+"University"	1
+"Upper Saint Clair"	1
+"Urbana"	262
+"Verdun"	95
+"Verona"	60
+"Victoria Park"	1
+"Vimont"	3
+"Waddell"	8
+"Waldbronn"	9
+"Waterloo"	262
+"Water of Leith"	1
+"Waunakee"	38
+"Waxhaw"	5
+"Weddington"	3
+"Weingarten"	11
+"Weingarten (Baden)"	3
+"Wesley Chapel"	7
+"West Homestead"	12
+"West Mifflin"	33
+"Westmount"	53
+"Westworld Scottsdale"	1
+"W Henderson"	1
+"Whitehall"	1
+"Whitney"	1
+"Wickenburg"	71
+"Wilkinsburg"	8
+"Windsor"	8
+"Wittmann"	2
+"Wörth"	1
+"Wörth am Rhein"	8
+"W Spring Valley"	1
+"W Summerlin"	1
+"Youngtown"	27
