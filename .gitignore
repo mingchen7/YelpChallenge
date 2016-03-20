@@ -4,4 +4,4 @@ docker/
 dataset/
 *.env
 *.csv
-
+*.Rhistory

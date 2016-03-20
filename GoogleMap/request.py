@@ -51,10 +51,11 @@ class GooglePlaces:
                         else:
                             break
                     
-                    # insert into MongoDB                                    
+                    # insert into MongoDB    
+                    self.insert(response['results'], business_id)
                 
                 count = count + 1
-                if(count >= 10):
+                if(count > 1):
                     break
                 
     # single request
@@ -83,15 +84,26 @@ class GooglePlaces:
             print 'Waiting', current_delay, 'seconds before retrying.'
             time.sleep(current_delay)
             current_delay *= 2  # Increase the delay each time we retry.
-        
-            
-    def parseJson(self, content):
-        print json.dumps([s for s in content['results']], indent=2)
-        
+                    
+    def insert(self, placeList, business_id):
+        try:
+            client = pymongo.MongoClient()
+            db = client.googlemap 
+        except pymongo.errors.ConnectionFailure, e:
+            print "Could not connect to server: %s" % e
 
+        for place in placeList:            
+            # adding yelp id to the place
+            place['yelp_id'] = business_id                        
+            # print json.dumps(place, indent = 2)
+            db.places.insert_one(place)
+        
+        client.close()
+
+            
 if __name__ == "__main__":
-    # types = ('bakery','bar','book_store','bus_station','cafe','gas_station','grocery_or_supermarket','gym','library', \
-    #      'movie_theater','lodging','night_club','park','parking','restaurant','school','store','subway_station','university') 
+    # types = ('restaurant','bar','shopping_mall','food','cafe','grocery_or_supermarket','movie_theater','lodging','night_club', \
+    #               'parking','bus_station','subway_station','transit_station','university','school') 
     types = ["restaurant"]
     GooglePlaces().run(500, types)
 
