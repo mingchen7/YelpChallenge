@@ -17,25 +17,31 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from numpy import *
 
 # read in csv file, first header for the first line by default
+# first 5 rows
+# only review contect selected 
 r = pd.read_csv('C:/Users/Wan/Desktop/510/yelp data/yelp_academic_dataset_review.csv',
                 nrows = 5,
                 usecols = ["text"])
 
-for title in r:
-    print title
 
+##  check title
+for title in r:
+    print title    
+
+##  check conents
 print r
 
 
-
+##  fun to analyze
 sid = SentimentIntensityAnalyzer()
 
+##  print comments for each content
 for row in r["text"]:
     sentences = row
-    print sentences
+    print sentences     ##  review content
 
     ss = sid.polarity_scores(sentences)
-    print ss
+    print ss            ##  comments
     print
 
 
