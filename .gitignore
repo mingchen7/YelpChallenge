@@ -3,5 +3,6 @@
 docker/
 dataset/
 *.env
-*.csv
+*.log
+processed ids.csv
 *.Rhistory
