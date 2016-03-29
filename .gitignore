@@ -6,3 +6,5 @@ dataset/
 *.log
 processed ids.csv
 *.Rhistory
+*.csv~
+*.log~
