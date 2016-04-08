@@ -1,10 +1,9 @@
 *.py[cod]
 *config.py
 docker/
-dataset/
+dataset/origin/
 *.env
 *.log
-processed ids.csv
 *.Rhistory
 *.csv~
 *.log~

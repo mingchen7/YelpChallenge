@@ -1,0 +1,5 @@
+ IsFoodGood
+ IsServiceGood
+ IsAmbianceGood
+ IsDealsGood
+ IsPriceGood

@@ -1,4 +1,3 @@
-### Appendix: json format of Yelp data
 #### Business
 {
     'type': 'business',
