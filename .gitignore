@@ -7,3 +7,6 @@ dataset/origin/
 *.Rhistory
 *.csv~
 *.log~
+*.py~
+*.txt~
+
