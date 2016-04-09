@@ -1,3 +1,11 @@
-### MIS 510 Web Mining and Computing
+### MIS510 Web Mining and Computing Project
 
-MIS 510 project.
+### Yelp Challenge: Personalized Recommendation System
+
+#### Highlights
+The system integrates additional features including
+- Google Map Places Web Service data
+- Yelp Review sentiment analysis results.
+
+
+#### Demo
