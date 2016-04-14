@@ -38,7 +38,8 @@ class ReviewAnalyzer:
 	def filter(self):	
 		firstline = True
 		row_count = 1		
-		filepath = os.path.join(self.ROOT_DIR, 'dataset/yelp_academic_dataset_review.csv')
+		filepath = os.path.join(self.ROOT_DIR, 'dataset/origin/yelp_academic_dataset_review.csv')
+		# filepath = os.path.join(self.ROOT_DIR, 'dataset/origin/filtered_reviews.csv')
 		business_ids = set(self.load_business())		
 
 		with open(filepath, 'rb') as f:
@@ -234,22 +235,23 @@ if __name__ == '__main__':
 	# ReviewAnalyzer().filter()
 
 	# use classifier to process each review
-	labels = {}
-	labels['IsFoodGood'] = 0
-	labels['IsServiceGood'] = 1
-	labels['IsAmbianceGood'] = 2
-	# labels['IsDealsGood'] = 3
-	labels['IsPriceGood'] = 4	
+	# labels = {}
+	# labels['IsFoodGood'] = 0
+	# labels['IsServiceGood'] = 1
+	# labels['IsAmbianceGood'] = 2
+	# # labels['IsDealsGood'] = 3
+	# labels['IsPriceGood'] = 4	
 
-	params_food = ['linear', 10]
-	params_service = ['linear', 1]
-	params_ambiance = ['rbf', 10, 0.001]
-	# params_deals = ['rbf', 10, 0.001]
-	params_price = ['linear', 1]
+	# params_food = ['linear', 10]
+	# params_service = ['linear', 1]
+	# params_ambiance = ['rbf', 10, 0.001]
+	# # params_deals = ['rbf', 10, 0.001]
+	# params_price = ['linear', 1]
 
-	rc = classifier.ReviewClassifier()
-	clf_food = rc.train(labels['IsFoodGood'], 'food', params_food)
-	clf_service = rc.train(labels['IsServiceGood'], 'service', params_service)
-	clf_ambiance = rc.train(labels['IsAmbianceGood'], 'ambiance', params_ambiance)	
-	clf_price = rc.train(labels['IsPriceGood'], 'price', params_price)					
-	ReviewAnalyzer().process_review(clf_food, clf_service, clf_ambiance, clf_price)
+	# rc = classifier.ReviewClassifier()
+	# clf_food = rc.train(labels['IsFoodGood'], 'food', params_food)
+	# clf_service = rc.train(labels['IsServiceGood'], 'service', params_service)
+	# clf_ambiance = rc.train(labels['IsAmbianceGood'], 'ambiance', params_ambiance)	
+	# clf_price = rc.train(labels['IsPriceGood'], 'price', params_price)					
+	# ReviewAnalyzer().process_review(clf_food, clf_service, clf_ambiance, clf_price)
+	ReviewAnalyzer().filter()
