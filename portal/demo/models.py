@@ -42,7 +42,7 @@ class Business(models.Model):
 	university = models.IntegerField(null = True)
 
 	def __str__(self):
-		return "%s, %s" % (name, address)
+		return "%s, %s" % (self.name, self.address)
 
 class Rating(models.Model):
 	user = models.ForeignKey(User, on_delete = models.CASCADE)
@@ -50,5 +50,5 @@ class Rating(models.Model):
 	stars = models.IntegerField(default = 0)
 
 	def __str__(self):
-		return "%s, %s, %d" % (user, business, stars)
+		return "%s, %s, %d" % (self.user, self.business, self.stars)
 

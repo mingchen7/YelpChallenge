@@ -181,14 +181,15 @@ grid.arrange(p_food, p_service, p_ambiance, p_price, ncol = 2)
 
 *Figure 3. SVM model comparison over different parameter settings*
 
+The model selection is performed based on the accuracy measure. The accuracy measure is calculated based on 5-fold cross-validation. This enire model evaluation and validation process is implemented using [Python Scikit-learn package](http://scikit-learn.org/stable/modules/svm.html#svm-kernels). 
+
+Each model specification follows the "linear/rbf-C-gamma" format. The results showed that the best model of food, service, amabiance, and price classifiers are "linear-10", "linear-1", "rbf-10-0.001" and "linear-1" correspondingly.
+
 The processed Yelp review sentiment analysis features can be viewed at Github Repo. [CLieck here to see processed review features](https://github.com/mingchen7/YelpChallenge/blob/master/dataset/extracted_review_features.csv). The following showed the sample rows for the processed review features. In the feature vector, four binary variables (i.e., IsFoodGood, IsServiceGood, IsAmbianceGood, and IsPriceGood) are predicted by the developed SVM review classifier. The afterward four features (i.e., vader_compound, vader_neg, vader_neu, and vader_pos) are calculated from VADER algorithm.
 
 ![](review sentiment features.png)
 
-*Figure 3. Processed sample review sentiment features*
-
-The model selection is performed based on the mean absoluate error (MAE) measure. The MAE measure is calculated based on 5-fold cross-validation. This enire model evaluation and validation process is implemented using [Python Scikit-learn package](http://scikit-learn.org/stable/modules/svm.html#svm-kernels). 
-
+*Figure 4. Processed sample review sentiment features*
 
 
 ## Reference
