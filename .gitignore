@@ -2,6 +2,7 @@
 *config.py
 docker/
 dataset/origin/
+dataset/rating prediction/
 *.env
 *.log
 *.Rhistory

@@ -15,7 +15,21 @@ def user(request):
 	return render(request, 'demo/user.html', context)	
 
 def business(request):
-	context = {'id': 'business'}
+	# take random 9 restaurants
+	index_list = range(0,5667)
+	rnd_list = random.sample(index_list, 9)	
+
+	context = {}
+	rest_id = 1
+	for rnd in rnd_list:
+		business = Business.objects.all()[rnd]
+		info = {}
+		info['name'] = business.name
+		info['address'] = business.address
+		context[rest_id] = info
+		rest_id = rest_id + 1
+	
+	print json.dumps(context, indent = 2)
 	return render(request, 'demo/business.html', context)
 
 def detail(request):
