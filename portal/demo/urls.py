@@ -8,6 +8,6 @@ urlpatterns = [
     url(r'^register/$', views.register, name = 'register'),
     url(r'^business/$', views.business),
     url(r'^business/(?P<page_num>[0-9]+)/$', views.business, name = 'business'),
-    url(r'^detail/$', views.detail, name = 'detail'),
+    url(r'^detail/(?P<restaurant_id>[0-9]+)/$', views.detail, name = 'detail'),
     url(r'^recommendation/$', views.recommendation, name = 'recommendation')
 ]
