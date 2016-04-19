@@ -6,7 +6,8 @@ from django.db import models
 
 
 class User(models.Model):
-	user_id = models.CharField(max_length = 32, primary_key =True)
+	# id = models.AutoField(primary_key=True)
+	user_id = models.CharField(max_length = 32)
 	name = models.CharField(max_length = 40, null = True)
 	email = models.CharField(max_length = 40)
 	password = models.CharField(max_length = 32)
@@ -16,7 +17,8 @@ class User(models.Model):
 
 class Business(models.Model):
 	## yelp features
-	business_id = models.CharField(max_length = 32, primary_key = True)
+	# id = models.AutoField(primary_key=True)
+	business_id = models.CharField(max_length = 32)
 	name = models.CharField(max_length = 100)
 	address = models.CharField(max_length = 100)
 	city = models.CharField(max_length = 20)

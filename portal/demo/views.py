@@ -5,6 +5,8 @@ from django.core.urlresolvers import reverse
 from demo.models import User, Business, Rating
 import datetime
 import hashlib
+import random
+import json
 
 # Create your views here.
 
@@ -14,22 +16,26 @@ def user(request):
 	}	
 	return render(request, 'demo/user.html', context)	
 
-def business(request):
+def business(request, page_num=1):
 	# take random 9 restaurants
 	index_list = range(0,5667)
 	rnd_list = random.sample(index_list, 9)	
 
 	context = {}
+	context['page'] = int(page_num)
+	
 	rest_id = 1
 	for rnd in rnd_list:
 		business = Business.objects.all()[rnd]
+		print business.id
 		info = {}
 		info['name'] = business.name
 		info['address'] = business.address
+		info['business_id'] = business.business_id
 		context[rest_id] = info
 		rest_id = rest_id + 1
 	
-	print json.dumps(context, indent = 2)
+	# print json.dumps(context, indent = 2)
 	return render(request, 'demo/business.html', context)
 
 def detail(request):
@@ -57,7 +63,7 @@ def register(request):
 		print request.POST['email']
 		print request.POST['password']
 		print encoded_pwd
-		user = User(user_id, username, email, encoded_pwd)
+		user = User(user_id = user_id, name = username, email = email, password = encoded_pwd)
 		user.save()		
 
 	except KeyError:
@@ -67,6 +73,7 @@ def register(request):
 
 	# redirect back to businesses page
 	else:
-		return HttpResponseRedirect(reverse('demo:business'))
+		# reverse to business page 1
+		return HttpResponseRedirect(reverse('demo:business', args = (1,)))
 
 

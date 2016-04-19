@@ -40,9 +40,11 @@ def load_business():
 			university = row[18]
 
 			# load into database
-			business = Business(business_id, name, address, city, state, stars, categories, price, \
-				restaurant_stars, bar_stars, food_stars, cafe_stars, movie_theater_stars, lodging_stars, night_club_stars, \
-				parking, bus_station, transit_station, university)
+			business = Business(business_id = business_id, name = name, address = address, city = city, state = state, stars = stars, \
+				categories = categories, price = price, \
+				restaurant_stars = restaurant_stars, bar_stars = bar_stars, food_stars = food_stars, cafe_stars = cafe_stars, \
+				movie_theater_stars = movie_theater_stars, lodging_stars = lodging_stars, night_club_stars = night_club_stars, \
+				parking = parking, bus_station = bus_station, transit_station = transit_station, university = university)
 
 			business.save()
 		

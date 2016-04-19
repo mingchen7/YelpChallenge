@@ -25,27 +25,27 @@
                     <img class="img-responsive" src="/static/img/food/hotpot.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="/demo/detail/">Restaurant Name</a>
+                    <a href="/demo/detail/">{{ 1.name}}</a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>{{ 1.address }}</p>
             </div>
             <div class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="/static/img/food/american.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="/demo/detail/">Restaurant Name</a>
+                    <a href="/demo/detail/">{{ 2.name}}</a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>{{ 2.address }}</p>
             </div>
             <div class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="/static/img/food/burgers.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="#">Restaurant Name</a>
+                    <a href="#">{{ 3.name }}</a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>{{ 3.address }}</p>
             </div>
         </div>
         <!-- /.row -->
@@ -57,27 +57,27 @@
                     <img class="img-responsive" src="/static/img/food/chinese.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="#">Restaurant Name</a>
+                    <a href="#">{{ 4.name }}</a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>{{ 4.address }}</p>
             </div>
             <div class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="/static/img/food/food1.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="#">Restaurant Name</a>
+                    <a href="#">{{ 5.name }}</a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>{{ 5.address }</p>
             </div>
             <div class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="/static/img/food/ice-cream.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="#">Restaurant Name</a>
+                    <a href="#">{{ 6.name }}</a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>{{ 6.address }}</p>
             </div>
         </div>
 
@@ -88,27 +88,27 @@
                     <img class="img-responsive" src="/static/img/food/japanese.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="#">Restaurant Name</a>
+                    <a href="#">{{ 7.name }}</a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>{{ 7.address }}</p>
             </div>
             <div class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="/static/img/food/steak.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="#">Restaurant Name</a>
+                    <a href="#">{{ 8.name }}</a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>{{ 8.address }}</p>
             </div>
             <div class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="/static/img/food/sushi.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="#">Restaurant Name</a>
+                    <a href="#">{{ 9.name }}</a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>{{ 9.address }}</p>
             </div>
         </div>
         <!-- /.row -->
@@ -122,23 +122,23 @@
                     <li>
                         <a href="#">&laquo;</a>
                     </li>
-                    <li class="active">
-                        <a href="#">1</a>
+                    <li {% if page == 1 %} class="active" {% endif %}>
+                        <a href="{% url 'demo:business' 1 %}">1</a>
+                    </li>
+                    <li {% if page == 2 %} class="active" {% endif %}>
+                        <a href="{% url 'demo:business' 2 %}">2</a>
+                    </li>
+                    <li {% if page == 3 %} class="active" {% endif %}>
+                        <a href="{% url 'demo:business' 3 %}">3</a>
+                    </li>
+                    <li {% if page == 4 %} class="active" {% endif %}>
+                        <a href="{% url 'demo:business' 4 %}">4</a>
+                    </li>
+                    <li {% if page == 5 %} class="active" {% endif %}>
+                        <a href="{% url 'demo:business' 5 %}">5</a>
                     </li>
                     <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
+                        <a href="{% url 'demo:business' 1 %}">&raquo;</a>
                     </li>
                 </ul>
             </div>

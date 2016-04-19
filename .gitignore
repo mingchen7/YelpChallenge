@@ -10,4 +10,4 @@ dataset/rating prediction/
 *.log~
 *.py~
 *.txt~
-
+portal/db.sqlite3
