@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.template import loader
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.core.urlresolvers import reverse
 from demo.models import User, Business, Rating
+import django.db as db
 import datetime
 import hashlib
 import random
@@ -14,13 +15,16 @@ def user(request):
 	}	
 	return render(request, 'demo/user.html', context)	
 
-def business(request, page_num=1):
+def business(request, page_num=1, cust_id = 1):
+	print "In the Business Page. Customer id: %d" % int(cust_id)
+
 	# take random 9 restaurants
 	index_list = range(0,5667)
 	rnd_list = random.sample(index_list, 9)	
 
 	context = {}
 	context['page'] = int(page_num)
+	context['cust_id'] = cust_id
 	
 	rest_id = 1
 	for rnd in rnd_list:
@@ -36,8 +40,8 @@ def business(request, page_num=1):
 	# print json.dumps(context, indent = 2)
 	return render(request, 'demo/business.html', context)
 
-def detail(request, restaurant_id):
-	# print restaurant_id
+def detail(request, restaurant_id, cust_id):
+	print "In the Detail Page. Customer id: %d, Restaurant id: %d" % (int(cust_id), int(restaurant_id))
 	business = Business.objects.get(pk = restaurant_id)		
 
 	# parsing the categories string
@@ -50,8 +54,6 @@ def detail(request, restaurant_id):
 		category = category[0][1:-1] # remove quotes
 		categories_list.append(category)		
 	
-	# print business.restaurant_stars
-	# print type(business.restaurant_stars)
 	context = {
 		'business_id': business.business_id,
 		'name': business.name,
@@ -73,23 +75,55 @@ def detail(request, restaurant_id):
 		'university': business.university
 	}
 
-	if business.price != None:
-		price_list = range(business.price)
-	else:
-		price_list = []
-
+	price_list = [] if business.price == None else range(business.price)	
 	stars_list = range(int(business.stars))
 	empty_stars_list = range(5 - int(business.stars))
  	context['price_list'] = price_list
  	context['stars_list'] = stars_list
  	context['empty_stars_list'] = empty_stars_list
  	context['categories_list'] = categories_list
+ 	context['cust_id'] = cust_id
+ 	context['restaurant_id'] = restaurant_id
 
+ 	# determine if already rated
+ 	user = User.objects.get(pk = cust_id) 	
+ 	query = Rating.objects.filter(user = user, business = business)
+ 	star_sequence = ['star1','star2','star3','star4','star5']
+ 	if len(query) >= 1:
+ 		rated_star = query[0].stars
+ 		for i in range(rated_star):
+ 			context[star_sequence[i]] = True
+ 		for i in range(rated_star, 5):
+ 			context[star_sequence[i]] = False 		
+ 	else:
+ 		for i in range(5):
+ 			context[star_sequence[i]] = False
+
+ 	print "Query result: %d" % len(query)
 	return render(request, 'demo/detail.html', context)
 
-def recommendation(request):
-	context = {}
-	return render(request, 'demo/recommendation.html', context)
+def rating(request, restaurant_id, cust_id, rating):
+	print "In the rating page."
+	print "restaurant id: %d, customer id: %d, rating: %d" % (int(restaurant_id), int(cust_id), int(rating))
+
+	try:
+		user = User.objects.get(pk = cust_id)
+		business = Business.objects.get(pk = restaurant_id)
+		query = Rating.objects.filter(user = user, business = business)
+		# already rated
+		if(len(query)) >= 1:
+			print "This restaurant has already been rated."
+			raise Http404(e.message)			
+		# not rated
+		else:
+			rating = Rating(user = user, business = business, stars = int(rating))
+			rating.save()
+
+	except db.Error as e:
+		raise Http404(e.message)	
+	else:
+		# direct back to the business page		
+		return HttpResponseRedirect(reverse('demo:business', args = (1, cust_id,)))
 
 def register(request):
 	try:
@@ -102,14 +136,11 @@ def register(request):
 		username = request.POST['username']
 		email = request.POST['email']		
 		encoded_pwd = hash_pwd.hexdigest()
-
-		print user_id
-		print request.POST['username']
-		print request.POST['email']
-		print request.POST['password']
-		print encoded_pwd
+		
 		user = User(user_id = user_id, name = username, email = email, password = encoded_pwd)
-		user.save()		
+		user.save()
+		cust_id = user.id		
+		print "auto customer id: %d" % cust_id
 
 	except KeyError:
 		render(request, 'demo/user.html', {
@@ -119,6 +150,10 @@ def register(request):
 	# redirect back to businesses page
 	else:
 		# reverse to business page 1
-		return HttpResponseRedirect(reverse('demo:business', args = (1,)))
+		return HttpResponseRedirect(reverse('demo:business', args = (1, cust_id,)))
+
+def recommendation(request):
+	context = {}
+	return render(request, 'demo/recommendation.html', context)		
 
 

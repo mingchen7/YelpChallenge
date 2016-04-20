@@ -45,11 +45,31 @@
                     <p>Rating your restaurant here! </p>
                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
                       <h4>
-                          <a href="#"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></a>
-                          <a href="#"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></a>
-                          <a href="#"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></a>
-                          <a href="#"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></a>
-                          <a href="#"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></a>
+                          <a href="{% url 'demo:rating' restaurant_id cust_id 1 %}">
+                              {% if star1 %}<span class="glyphicon glyphicon-star" aria-hidden="true">
+                              {% else %}<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                              {% endif %}
+                          </a>
+                          <a href="{% url 'demo:rating' restaurant_id cust_id 2 %}">
+                              {% if star2 %}<span class="glyphicon glyphicon-star" aria-hidden="true">
+                              {% else %}<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                              {% endif %}
+                          </a>
+                          <a href="{% url 'demo:rating' restaurant_id cust_id 3 %}">
+                              {% if star3 %}<span class="glyphicon glyphicon-star" aria-hidden="true">
+                              {% else %}<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                              {% endif %}
+                          </a>
+                          <a href="{% url 'demo:rating' restaurant_id cust_id 4 %}">
+                              {% if star4 %}<span class="glyphicon glyphicon-star" aria-hidden="true">
+                              {% else %}<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                              {% endif %}
+                          </a>
+                          <a href="{% url 'demo:rating' restaurant_id cust_id 5 %}">
+                              {% if star5 %}<span class="glyphicon glyphicon-star" aria-hidden="true">
+                              {% else %}<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                              {% endif %}
+                          </a>
                       </h4>
                     </div>
                 </div>

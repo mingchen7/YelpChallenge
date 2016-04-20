@@ -21,29 +21,29 @@
         <!-- Projects Row -->
         <div class="row">
             <div class="col-md-4 portfolio-item">
-                <a href="{% url 'demo:detail' 1.restaurant_id %}">
+                <a href="{% url 'demo:detail' 1.restaurant_id cust_id %}">
                     <img class="img-responsive" src="/static/img/food/hotpot.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="{% url 'demo:detail' 1.restaurant_id %}">{{ 1.name }}</a>
+                    <a href="{% url 'demo:detail' 1.restaurant_id cust_id %}">{{ 1.name }}</a>
                 </h3>
                 <p>{{ 1.address }}</p>
             </div>
             <div class="col-md-4 portfolio-item">
-                <a href="{% url 'demo:detail' 2.restaurant_id %}">
+                <a href="{% url 'demo:detail' 2.restaurant_id cust_id %}">
                     <img class="img-responsive" src="/static/img/food/american.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="{% url 'demo:detail' 2.restaurant_id %}">{{ 2.name}}</a>
+                    <a href="{% url 'demo:detail' 2.restaurant_id cust_id %}">{{ 2.name}}</a>
                 </h3>
                 <p>{{ 2.address }}</p>
             </div>
             <div class="col-md-4 portfolio-item">
-                <a href="{% url 'demo:detail' 3.restaurant_id %}">
+                <a href="{% url 'demo:detail' 3.restaurant_id cust_id %}">
                     <img class="img-responsive" src="/static/img/food/burgers.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="{% url 'demo:detail' 3.restaurant_id %}">{{ 3.name }}</a>
+                    <a href="{% url 'demo:detail' 3.restaurant_id cust_id %}">{{ 3.name }}</a>
                 </h3>
                 <p>{{ 3.address }}</p>
             </div>
@@ -53,29 +53,29 @@
         <!-- Projects Row -->
         <div class="row">
             <div class="col-md-4 portfolio-item">
-                <a href="{% url 'demo:detail' 4.restaurant_id %}">
+                <a href="{% url 'demo:detail' 4.restaurant_id cust_id %}">
                     <img class="img-responsive" src="/static/img/food/chinese.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="{% url 'demo:detail' 4.restaurant_id %}">{{ 4.name }}</a>
+                    <a href="{% url 'demo:detail' 4.restaurant_id cust_id %}">{{ 4.name }}</a>
                 </h3>
                 <p>{{ 4.address }}</p>
             </div>
             <div class="col-md-4 portfolio-item">
-                <a href="{% url 'demo:detail' 5.restaurant_id %}">
+                <a href="{% url 'demo:detail' 5.restaurant_id cust_id %}">
                     <img class="img-responsive" src="/static/img/food/food1.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="{% url 'demo:detail' 5.restaurant_id %}">{{ 5.name }}</a>
+                    <a href="{% url 'demo:detail' 5.restaurant_id cust_id %}">{{ 5.name }}</a>
                 </h3>
                 <p>{{ 5.address }</p>
             </div>
             <div class="col-md-4 portfolio-item">
-                <a href="{% url 'demo:detail' 6.restaurant_id %}">
+                <a href="{% url 'demo:detail' 6.restaurant_id cust_id %}">
                     <img class="img-responsive" src="/static/img/food/ice-cream.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="{% url 'demo:detail' 6.restaurant_id %}">{{ 6.name }}</a>
+                    <a href="{% url 'demo:detail' 6.restaurant_id cust_id %}">{{ 6.name }}</a>
                 </h3>
                 <p>{{ 6.address }}</p>
             </div>
@@ -84,29 +84,29 @@
         <!-- Projects Row -->
         <div class="row">
             <div class="col-md-4 portfolio-item">
-                <a href="{% url 'demo:detail' 7.restaurant_id %}">
+                <a href="{% url 'demo:detail' 7.restaurant_id cust_id %}">
                     <img class="img-responsive" src="/static/img/food/japanese.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="{% url 'demo:detail' 7.restaurant_id %}">{{ 7.name }}</a>
+                    <a href="{% url 'demo:detail' 7.restaurant_id cust_id %}">{{ 7.name }}</a>
                 </h3>
                 <p>{{ 7.address }}</p>
             </div>
             <div class="col-md-4 portfolio-item">
-                <a href="{% url 'demo:detail' 8.restaurant_id %}">
+                <a href="{% url 'demo:detail' 8.restaurant_id cust_id %}">
                     <img class="img-responsive" src="/static/img/food/steak.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="{% url 'demo:detail' 8.restaurant_id %}">{{ 8.name }}</a>
+                    <a href="{% url 'demo:detail' 8.restaurant_id cust_id %}">{{ 8.name }}</a>
                 </h3>
                 <p>{{ 8.address }}</p>
             </div>
             <div class="col-md-4 portfolio-item">
-                <a href="{% url 'demo:detail' 9.restaurant_id %}">
+                <a href="{% url 'demo:detail' 9.restaurant_id cust_id %}">
                     <img class="img-responsive" src="/static/img/food/sushi.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="{% url 'demo:detail' 9.restaurant_id %}">{{ 9.name }}</a>
+                    <a href="{% url 'demo:detail' 9.restaurant_id cust_id %}">{{ 9.name }}</a>
                 </h3>
                 <p>{{ 9.address }}</p>
             </div>
@@ -123,22 +123,22 @@
                         <a href="#">&laquo;</a>
                     </li>
                     <li {% if page == 1 %} class="active" {% endif %}>
-                        <a href="{% url 'demo:business' 1 %}">1</a>
+                        <a href="{% url 'demo:business' 1 cust_id %}">1</a>
                     </li>
                     <li {% if page == 2 %} class="active" {% endif %}>
-                        <a href="{% url 'demo:business' 2 %}">2</a>
+                        <a href="{% url 'demo:business' 2 cust_id %}">2</a>
                     </li>
                     <li {% if page == 3 %} class="active" {% endif %}>
-                        <a href="{% url 'demo:business' 3 %}">3</a>
+                        <a href="{% url 'demo:business' 3 cust_id %}">3</a>
                     </li>
                     <li {% if page == 4 %} class="active" {% endif %}>
-                        <a href="{% url 'demo:business' 4 %}">4</a>
+                        <a href="{% url 'demo:business' 4 cust_id %}">4</a>
                     </li>
                     <li {% if page == 5 %} class="active" {% endif %}>
-                        <a href="{% url 'demo:business' 5 %}">5</a>
+                        <a href="{% url 'demo:business' 5 cust_id %}">5</a>
                     </li>
                     <li>
-                        <a href="{% url 'demo:business' 1 %}">&raquo;</a>
+                        <a href="{% url 'demo:business' 1 cust_id %}">&raquo;</a>
                     </li>
                 </ul>
             </div>
