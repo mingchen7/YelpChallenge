@@ -11,3 +11,4 @@ dataset/rating prediction/
 *.py~
 *.txt~
 portal/db.sqlite3
+algorithm/models/

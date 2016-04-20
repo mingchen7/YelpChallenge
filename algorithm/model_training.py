@@ -17,9 +17,9 @@ def load_data():
 	nrow = training.shape[0]
 	ncol = training.shape[1]	
 
-	rnd_rows = np.random.randint(nrow-1, size = 100000)	
+	rnd_rows = np.random.randint(nrow-1, size = 10000)	
 
-	data = training[rnd_rows,0:ncol-2]
+	data = training[rnd_rows,0:ncol-1]
 	target = training[rnd_rows,ncol-1]
 
 	print data.shape
