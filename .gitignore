@@ -9,6 +9,6 @@ dataset/origin/
 *.log~
 *.py~
 *.txt~
-RecAlg/model/
-RecAlg/RawFile/
+RecAlgo/model/
+RecAlgo/RawFile/
 
