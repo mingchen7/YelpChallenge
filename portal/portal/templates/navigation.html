@@ -17,10 +17,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="{% url 'demo:business' 1 1 %}">Businesses</a>
+                        <a href="{% url 'demo:business' 1 cust_id %}">Businesses</a>
                     </li>                    
                     <li>
-                        <a href="/demo/recommendation">Get Recommendation</a>
+                        <a href="{% url 'demo:recommendation' cust_id %}">Get Recommendation</a>
                     </li>
                 </ul>
             </div>

@@ -11,7 +11,7 @@ import json
 
 def user(request):
 	context = {
-		'id': 'user'
+		'cust_id': 1
 	}	
 	return render(request, 'demo/user.html', context)	
 
@@ -111,9 +111,8 @@ def rating(request, restaurant_id, cust_id, rating):
 		business = Business.objects.get(pk = restaurant_id)
 		query = Rating.objects.filter(user = user, business = business)
 		# already rated
-		if(len(query)) >= 1:
-			print "This restaurant has already been rated."
-			raise Http404(e.message)			
+		if(len(query)) >= 1:			
+			raise Http404("This restaurant has already been rated.")			
 		# not rated
 		else:
 			rating = Rating(user = user, business = business, stars = int(rating))
@@ -152,8 +151,21 @@ def register(request):
 		# reverse to business page 1
 		return HttpResponseRedirect(reverse('demo:business', args = (1, cust_id,)))
 
-def recommendation(request):
-	context = {}
+def recommendation(request, cust_id):
+	print "In the Recommendation Page. Customer id: %d" % cust_id
+
+	# get rated restaurants given cust_id
+
+	# construct data matrix as input
+
+
+	# run SVM to get recommendation
+
+	# construct results
+
+	context = {
+		'cust_id': cust_id
+	}
 	return render(request, 'demo/recommendation.html', context)		
 
 
