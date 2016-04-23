@@ -8,19 +8,14 @@ from sklearn.metrics import precision_score, recall_score, mean_absolute_error
 from sklearn.grid_search import GridSearchCV
 from sklearn.externals import joblib
 
-def load_data():
-	ROOT_DIR = dirname(dirname(abspath(__file__)))
-	filepath = os.path.join(ROOT_DIR, 'dataset/rating prediction/train.csv')
-	training = np.loadtxt(open(filepath, "rb"), delimiter = ",", skiprows = 1)
-	
+def load_data(train_data, sample_size):		
 	# print training.shape
-	nrow = training.shape[0]
-	ncol = training.shape[1]	
+	nrow = train_data.shape[0]
+	ncol = train_data.shape[1]	
+	rnd_rows = np.random.randint(nrow-1, size = sample_size)	
 
-	rnd_rows = np.random.randint(nrow-1, size = 10000)	
-
-	data = training[rnd_rows,0:ncol-2]
-	target = training[rnd_rows,ncol-1]
+	data = train_data[rnd_rows,0:ncol-2]
+	target = train_data[rnd_rows,ncol-1]
 
 	print data.shape
 	print target.shape
@@ -36,7 +31,7 @@ def evaluate():
 				
 		parameters = [
 			{'C': [1, 10, 100], 'kernel': ['linear']},
-			{'C': [1, 10, 100], 'gamma': [0.001, 0.0001], 'kernel': ['rbf']},
+			{'C': [1, 10, 100], 'gamma': [0.01, 0.001, 0.0001], 'kernel': ['rbf']},
 		]
 				
 		# cross-validation generator
@@ -44,10 +39,10 @@ def evaluate():
 		ss = cross_validation.ShuffleSplit(n_samples, n_iter = 5, test_size = 0.2, random_state = 0)					
 		for train_index, test_index in ss:
 			print("%s %s" % (train_index, test_index))
-		
-		# grid search
-		print "Training models.."
+		 
+		# grid search				
 		logging.debug("Training models...")
+		logging.debug("Sample size is = %d" % n_samples)
 		estimator = svm.SVC()
 		clf = GridSearchCV(estimator, parameters, verbose = 3, cv=ss, n_jobs = 4)
 		clf.fit(data, target)		
@@ -64,25 +59,43 @@ def evaluate():
 		for params, mean_score, scores in clf.grid_scores_:
 			print "%0.3f (+/-%0.03f) for %r" % (mean_score, scores.std() * 2, params)
 			logging.debug("%0.3f (+/-%0.03f) for %r" % (mean_score, scores.std() * 2, params))		
+		
+		logging.debug("Training finished.")
 
 		# scores = cross_validation.cross_val_score(clf, data, targets[:, label], cv = ss)				
 		# print ("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))	
 
-def train():
-	data, target = load_data()
+def train(data, sample_size):
+	LOG_FILE = 'training history.log'
+	logging.basicConfig(filename = LOG_FILE, level = logging.DEBUG)
+	
+	data, target = load_data(data, sample_size)
 	X_train, X_test, y_train, y_test = cross_validation.train_test_split(data, target, test_size = 0.2, random_state = 0)		
 	
 	print "Training model..."
-	clf = svm.SVC(kernel = 'linear', C = 10).fit(X_train, y_train)
-	joblib.dump(clf, 'models/svr_linear_10.pkl')
+	logging.debug("Sample size = %d" % sample_size)
+	clf = svm.SVC(kernel = 'linear', C = 100).fit(X_train, y_train)
+
+	if sample_size == 50000:
+		joblib.dump(clf, 'models/svr_linear_100.pkl')
 
 	print "Predicting model..."
 	y_pred = clf.predict(X_test)					
 	print "Mean accuracy : %0.3f" % clf.score(X_test, y_test)
 	print "Precision     : %0.3f" % precision_score(y_test, y_pred)
 	print "Recall        : %0.3f" % recall_score(y_test, y_pred)
+	logging.debug("Mean accuracy : %0.3f" % clf.score(X_test, y_test))
+	logging.debug("Precision     : %0.3f" % precision_score(y_test, y_pred))
+	logging.debug("Recall        : %0.3f" % recall_score(y_test, y_pred))
 	return clf
 
-if __name__ == '__main__':	
-	clf = evaluate()
+if __name__ == '__main__':
+	ROOT_DIR = dirname(dirname(abspath(__file__)))
+	filepath = os.path.join(ROOT_DIR, 'dataset/rating prediction/train.csv')
+	sample_sizes = [5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000]
+	data = np.loadtxt(open(filepath, "rb"), delimiter = ",", skiprows = 1)
+
+	for size in sample_sizes:
+		clf = train(data, size)
+	# clf = evaluate()
 

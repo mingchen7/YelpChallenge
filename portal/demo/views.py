@@ -8,6 +8,8 @@ import datetime
 import hashlib
 import random
 import json
+import pandas as pd
+# import demo.Generate_User_Recommendation as recommend
 
 def user(request):
 	context = {
@@ -152,20 +154,59 @@ def register(request):
 		return HttpResponseRedirect(reverse('demo:business', args = (1, cust_id,)))
 
 def recommendation(request, cust_id):
-	print "In the Recommendation Page. Customer id: %d" % cust_id
+    print "In the Recommendation Page. Customer id: %d" % int(cust_id)
 
-	# get rated restaurants given cust_id
+    ## get rated restaurants given cust_id
+    user = User.objects.get(pk = cust_id)
+    ratingList = Rating.objects.filter(user = user)
+    values = ratingList.values('user','business','stars')
 
-	# construct data matrix as input
+    ### construct data matrix as input
+    df = pd.DataFrame.from_records(values)
+    nrow = len(df['business'])
 
+    business_id_list = ['None'] * nrow
+    next_id = ''
+    i = 0
 
-	# run SVM to get recommendation
+    while i < nrow:    	
+    	print ratingList[i].business.business_id
+        next_id =  str(Business.objects.filter(pk = str(ratingList[i].business_id))[0].business_id)
+        print next_id
+        business_id_list[i] = next_id
+        i = i + 1
+
+    ##   Create a column from the business_id_list
+    df['business_id'] = business_id_list
+
+    df_togo = df.drop('business',1)
 
 	# construct results
+    # rec_list = recommend.Generate_Recommendation(df_togo)
+    rec_list = ['ZZlMGUiKZNiDyPLmra7RZQ','zYRKOiYCZJAg1SV1WZG4lw','ZxGg3JpHVryyPSVpQHdLvQ','ZXcKt050sV4iKXM-BVQgCA','zwHM6hz8swKIG-4-BSKMPA']
 
-	context = {
-		'cust_id': cust_id
-	}
-	return render(request, 'demo/recommendation.html', context)		
+    context = {}
+    context['cust_id'] = cust_id
+
+    for i in range(len(rec_list)):    	
+    	rec_detail = {}
+        business_detail = Business.objects.get(business_id = rec_list[i])
+        price_list = [] if business_detail.price == None else range(business_detail.price)
+        stars_list = range(int(business_detail.stars))
+        empty_stars_list = range(5 - int(business_detail.stars))
+
+        rec_detail['id'] = str(business_detail.id)
+        rec_detail['name'] = str(business_detail.name)
+        rec_detail['address'] = str(business_detail.address)
+        rec_detail['business_id'] = str(business_detail.business_id)
+        rec_detail['city'] = str(business_detail.city)
+        rec_detail['state'] = str(business_detail.state)
+        rec_detail['price_list'] = price_list
+        rec_detail['stars_list'] = stars_list
+        rec_detail['empty_stars_list'] = empty_stars_list
+        context[i] = rec_detail
+
+    print "Go to Recommendation!"
+    return render(request, 'demo/recommendation.html', context)		
 
 
