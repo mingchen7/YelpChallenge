@@ -87,6 +87,12 @@ def detail(request, restaurant_id, cust_id):
  	context['cust_id'] = cust_id
  	context['restaurant_id'] = restaurant_id
 
+ 	# get a random picture of inside look
+ 	picture_index = random.randint(1,10)
+ 	picture_path = "/static/img/inside/%d.jpg" % picture_index
+ 	print picture_path
+ 	context['picture'] = picture_path
+
  	# determine if already rated
  	user = User.objects.get(pk = cust_id) 	
  	query = Rating.objects.filter(user = user, business = business)
@@ -100,8 +106,7 @@ def detail(request, restaurant_id, cust_id):
  	else:
  		for i in range(5):
  			context[star_sequence[i]] = False
-
- 	print "Query result: %d" % len(query)
+ 	
 	return render(request, 'demo/detail.html', context)
 
 def rating(request, restaurant_id, cust_id, rating):
@@ -170,8 +175,7 @@ def recommendation(request, cust_id):
     i = 0
 
     while i < nrow:    	
-    	print ratingList[i].business.business_id
-        # next_id =  str(Business.objects.filter(pk = str(ratingList[i].business_id))[0].business_id)
+    	print ratingList[i].business.business_id        
         next_id =  ratingList[i].business.business_id
         print next_id
         business_id_list[i] = next_id
@@ -184,8 +188,7 @@ def recommendation(request, cust_id):
 
 	# construct results
     rec_list = recommend.Generate_Recommendation(df_togo)
-    print rec_list
-    # rec_list = ['ZZlMGUiKZNiDyPLmra7RZQ','zYRKOiYCZJAg1SV1WZG4lw','ZxGg3JpHVryyPSVpQHdLvQ','ZXcKt050sV4iKXM-BVQgCA','zwHM6hz8swKIG-4-BSKMPA']
+    print rec_list    
 
     context = {}
     context['cust_id'] = cust_id

@@ -1,8 +1,6 @@
 *.py[cod]
 *config.py
 docker/
-dataset/origin/
-dataset/rating prediction/
 *.env
 *.log
 *.Rhistory
@@ -11,4 +9,6 @@ dataset/rating prediction/
 *.py~
 *.txt~
 portal/db.sqlite3
+dataset/origin/
+dataset/rating prediction/
 algorithm/models/
