@@ -9,7 +9,7 @@ import hashlib
 import random
 import json
 import pandas as pd
-# import demo.Generate_User_Recommendation as recommend
+import algorithm.Generate_User_Recommendation as recommend
 
 def user(request):
 	context = {
@@ -171,7 +171,8 @@ def recommendation(request, cust_id):
 
     while i < nrow:    	
     	print ratingList[i].business.business_id
-        next_id =  str(Business.objects.filter(pk = str(ratingList[i].business_id))[0].business_id)
+        # next_id =  str(Business.objects.filter(pk = str(ratingList[i].business_id))[0].business_id)
+        next_id =  ratingList[i].business.business_id
         print next_id
         business_id_list[i] = next_id
         i = i + 1
@@ -182,8 +183,9 @@ def recommendation(request, cust_id):
     df_togo = df.drop('business',1)
 
 	# construct results
-    # rec_list = recommend.Generate_Recommendation(df_togo)
-    rec_list = ['ZZlMGUiKZNiDyPLmra7RZQ','zYRKOiYCZJAg1SV1WZG4lw','ZxGg3JpHVryyPSVpQHdLvQ','ZXcKt050sV4iKXM-BVQgCA','zwHM6hz8swKIG-4-BSKMPA']
+    rec_list = recommend.Generate_Recommendation(df_togo)
+    print rec_list
+    # rec_list = ['ZZlMGUiKZNiDyPLmra7RZQ','zYRKOiYCZJAg1SV1WZG4lw','ZxGg3JpHVryyPSVpQHdLvQ','ZXcKt050sV4iKXM-BVQgCA','zwHM6hz8swKIG-4-BSKMPA']
 
     context = {}
     context['cust_id'] = cust_id
